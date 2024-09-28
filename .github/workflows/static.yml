@@ -4,6 +4,10 @@ on:
   push:
     branches: ["main"]
 
+  # Auto update every 24 hours at midnight
+  schedule:
+    - cron: '0 0 * * *'
+
 permissions:
   contents: read
   pages: write
