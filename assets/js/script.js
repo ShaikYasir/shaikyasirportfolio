@@ -138,19 +138,17 @@ for (let i = 0; i < navigationLinks.length; i++) {
   });
 }
 const numStars = 150;
-const stars = [];
 
-// Create stars and add to the body
+const stars = [];
+const starBg = document.getElementById("star-bg");
 for (let i = 0; i < numStars; i++) {
   const star = document.createElement("div");
   star.classList.add("star");
-  document.body.appendChild(star);
+  starBg.appendChild(star);
   stars.push(star);
-
   // Randomize position of each star
-  star.style.left = `${Math.random() * window.innerWidth}px`;
-  star.style.top = `${Math.random() * window.innerHeight}px`;
-
+  star.style.left = `${Math.random() * 100}vw`;
+  star.style.top = `${Math.random() * 100}vh`;
   // Randomize size
   const size = Math.random() * 3 + 1;
   star.style.width = `${size}px`;
@@ -161,12 +159,10 @@ for (let i = 0; i < numStars; i++) {
 document.addEventListener("mousemove", (e) => {
   const x = e.clientX / window.innerWidth;
   const y = e.clientY / window.innerHeight;
-
   stars.forEach((star, i) => {
     const depth = (i / numStars) * 10;
     const offsetX = x * depth - depth / 2;
     const offsetY = y * depth - depth / 2;
-
     star.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
   });
 });

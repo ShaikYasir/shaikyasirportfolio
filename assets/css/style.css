@@ -1936,9 +1936,25 @@ textarea.form-input::-webkit-resizer {
   border-radius: 50%;
   background-color: white;
   box-shadow: 0 0 6px rgba(255, 255, 255, 0.6), 0 0 20px rgba(255, 255, 255, 0.4);
-  opacity: 0;
+  opacity: 0.8;
   pointer-events: none;
   animation: twinkle 2s infinite ease-in-out;
+  z-index: 1;
+}
+
+#star-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  min-width: 100vw;
+  min-height: 100vh;
+  max-width: 100vw;
+  max-height: 100vh;
+  pointer-events: none;
+  z-index: -1;
+  background: transparent;
 }
   .sidebar,
   article {
